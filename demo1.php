@@ -1,3 +1,1 @@
-<?php 
-echo "main";
-echo "prem";
+<?php
