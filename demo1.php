@@ -2,6 +2,6 @@
 
 echo "sss";
 echo "prem";
-echo "demo";
+echo "demos";
 
 ?>
