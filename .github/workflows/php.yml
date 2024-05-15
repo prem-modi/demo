@@ -1,4 +1,4 @@
-name: Update Ngrok and Expose Local Server
+name: Expose Local Server with Ngrok
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  update_and_expose_with_ngrok:
+  expose_with_ngrok:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,13 +20,12 @@ jobs:
         chmod +x ngrok
         sudo mv ngrok /usr/local/bin/ngrok
 
+    - name: Update ngrok
+      run: ngrok update
+
     - name: Authenticate with ngrok
       run: |
         ngrok authtoken 2ZFh8a1Nk8d9awIHeTP6disHs4M_41hUrwN2kaS6XCPydcwA9
-
-    - name: Update ngrok
-      run: |
-        ngrok update
 
     - name: Run ngrok HTTP
       run: |
