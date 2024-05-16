@@ -13,16 +13,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Download ngrok binary
-      run: |
-        Invoke-WebRequest -Uri https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
-        Expand-Archive -Path ngrok.zip -DestinationPath .
-        Remove-Item ngrok.zip
-
     - name: Authenticate with ngrok
-      run: |
-        .\ngrok.exe authtoken 2ZFh8a1Nk8d9awIHeTP6disHs4M_41hUrwN2kaS6XCPydcwA9
+      run: .\ngrok.exe authtoken 2ZFh8a1Nk8d9awIHeTP6disHs4M_41hUrwN2kaS6XCPydcwA9
 
     - name: Expose local server with Ngrok
-      run: |
-        .\ngrok.exe http 8080  # Replace 8080 with the port of your local server
+      run: .\ngrok.exe http 8080  # Replace 8080 with the port of your local server
