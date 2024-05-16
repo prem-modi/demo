@@ -1,4 +1,4 @@
-name: Expose Local Server with Ngrok
+name: Test Ngrok API
 
 on:
   push:
@@ -6,15 +6,12 @@ on:
       - main
 
 jobs:
-  expose_with_ngrok:
-    runs-on: windows-latest
+  test_ngrok_api:
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
 
-    - name: Authenticate with ngrok
-      run: .\ngrok.exe authtoken 2ZFh8a1Nk8d9awIHeTP6disHs4M_41hUrwN2kaS6XCPydcwA9
-
-    - name: Expose local server with Ngrok
-      run: .\ngrok.exe http 8080  # Replace 8080 with the port of your local server
+    - name: Make API Request to Ngrok
+      run: |
+        sleep 10  # Wait for ngrok to start
+        curl http://localhost:4040/api/tunnels
