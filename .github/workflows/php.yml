@@ -18,3 +18,8 @@ jobs:
         @echo off
         cd C:\wamp64
         call demo.bat
+
+    - name: Run PowerShell Script
+      shell: pwsh
+      run: |
+        # Your PowerShell commands here
