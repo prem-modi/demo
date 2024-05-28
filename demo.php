@@ -1,3 +1,3 @@
 <?php
 $name= "prem"
-$surname = "premsss"
+$surnames = "premsss"
