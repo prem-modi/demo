@@ -1,5 +1,2 @@
-<?php 
-echo "jjjsssj";
-echo "jjjsssj";
-echo "jjjsssj";
-echo "jjjsssj";
+<?php
+$name= "prem"
